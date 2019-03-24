@@ -9,7 +9,7 @@ Create a new jail and set router portforwardings for port 80 and 443 to the new 
 ## Install Packages
 ```
 pkg update && pkg upgrade
-pkg install nginx git vim py27-certbot-nginx
+pkg install nginx git vim py27-certbot py27-certbot-nginx
 ```
 
 ## Create Proxyforwardings in nginx.conf
@@ -37,6 +37,15 @@ server {
  certbot --nginx -d sample.example.tld
  ```
  If everything works you will get asked how to redirect http traffic. For safety I choose ***2*** to redirect all traffic to https.
+ 
+ ### Create cronjob for autorenewal
+ ```
+ crontab -e
+ ```
+ Add this line:
+ ```
+ 52 0,12 * * * root /usr/local/bin/certbot renew --renew-hook 'service nginx reload'
+ ```
  
  ## Example of adjusting nextcloud conf
  Probably you have to adjust the config of the service you are redirecting to a little bit. Here an example of lines to add to the nextcloud config file:
