@@ -26,7 +26,6 @@ server {
  ```
  
  Location *** .well-known*** is needed for lets enrypt certificate creation.
- Find my whole nginx.conf file in root of this repo.
  
  ### Create Lets Encrypt certificate for new forwarding
  ```
