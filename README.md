@@ -12,6 +12,11 @@ pkg update && pkg upgrade
 pkg install nginx git vim py27-certbot py27-certbot-nginx
 ```
 
+### Enable nginx on system start
+```
+echo 'nginx_enable="YES"' >> /etc/rc.conf
+```
+
 ## Create Proxyforwardings in nginx.conf
 ```
 vim /usr/local/etc/nginx/nginx.conf
