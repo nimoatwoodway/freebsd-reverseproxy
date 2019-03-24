@@ -1,5 +1,9 @@
 # freebsd-reverseproxy
-Reverseproxy in a freebsd jail with lets encrypt. In my case for a FreeNas Setup where I have to redirect nextcloud and other services and having only one public IP.
+Reverseproxy in a freebsd jail with lets encrypt. 
+
+Have multiple web services whiche should be accessed with port 80 and 443 through one public IP address? The magic service you need herefor is a reverseproxy: https://en.wikipedia.org/wiki/Reverse_proxy
+
+In my case for a FreeNas Setup where I have to redirect nextcloud and other services and having only one public IP.
 Create a new jail and set router portforwardings for port 80 and 443 to the new reverseproxy jail.
 
 ## Install Packages
