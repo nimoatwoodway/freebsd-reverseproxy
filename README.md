@@ -1,5 +1,5 @@
 # freebsd-reverseproxy
-Reverseproxy in a freebsd jail with lets encrypt.
+Reverseproxy in a freebsd jail with lets encrypt. In my case for a FreeNas Setup where I have to redirect nextcloud and other services and having only one public IP.
 Create a new jail and set router portforwardings for port 80 and 443 to the new reverseproxy jail.
 
 ## Install Packages
@@ -33,5 +33,24 @@ server {
  certbot --nginx -d sample.example.tld
  ```
  If everything works you will get asked how to redirect http traffic. For safety I choose ***2*** to redirect all traffic to https.
+ 
+ ### Example of adjusting nextcloud conf
+ Probably you have to adjust the config of the service you are redirecting to a little bit. Here an example of lines to add to the nextcloud config file:
+ ```
+ vim /usr/local/www/nextcloud/config/config.php
+ ```
+ ```
+ 'trusted_proxies'   => ['ip_of_proxy_jail'],
+ 'overwritehost'     => 'sample.example.tld',
+ 'overwriteprotocol' => 'https',
+ ```
+ Add your internal nextcloud address to array of trusted_domains
+ ```
+ 'trusted_domains' =>
+  array (
+    0 => 'sample.example.tld',
+    1 => 'internal_host',
+  ),
+  ```
  
  ### Easy as Schnitzel isn't it?
