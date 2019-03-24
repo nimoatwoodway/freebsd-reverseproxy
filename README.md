@@ -29,7 +29,7 @@ server {
  }
  ```
  
- Location *** .well-known*** is needed for lets enrypt certificate creation.
+ Location ***.well-known*** is needed for lets enrypt certificate creation.
  
  ## Create Lets Encrypt certificate for new forwarding
  ```
