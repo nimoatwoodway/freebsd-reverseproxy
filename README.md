@@ -41,6 +41,8 @@ server {
  mkdir -p /usr/local/www/sample.example.tld/.well-known
  certbot --nginx -d sample.example.tld
  ```
+ On first run you will be asked to enter your email for renewal notifications.
+ 
  If everything works you will get asked how to redirect http traffic. For safety I choose ***2*** to redirect all traffic to https.
  
  ### Create cronjob for autorenewal
