@@ -31,14 +31,14 @@ server {
  
  Location *** .well-known*** is needed for lets enrypt certificate creation.
  
- ### Create Lets Encrypt certificate for new forwarding
+ ## Create Lets Encrypt certificate for new forwarding
  ```
  mkdir -p /usr/local/www/sample.example.tld/.well-known
  certbot --nginx -d sample.example.tld
  ```
  If everything works you will get asked how to redirect http traffic. For safety I choose ***2*** to redirect all traffic to https.
  
- ### Example of adjusting nextcloud conf
+ ## Example of adjusting nextcloud conf
  Probably you have to adjust the config of the service you are redirecting to a little bit. Here an example of lines to add to the nextcloud config file:
  ```
  vim /usr/local/www/nextcloud/config/config.php
@@ -57,4 +57,4 @@ server {
   ),
   ```
  
- ### Easy as Schnitzel isn't it?
+ ## Easy as Schnitzel isn't it?
