@@ -9,7 +9,7 @@ Create a new jail and set router portforwardings for port 80 and 443 to the new 
 ## Install Packages
 ```
 pkg update && pkg upgrade
-pkg install nginx git vim py27-certbot-nginx py27-certbot-dns-cloudflare
+pkg install nginx git vim py27-certbot-nginx
 ```
 
 ## Create Proxyforwardings in nginx.conf
