@@ -25,6 +25,11 @@ vim /usr/local/etc/nginx/nginx.conf
 ```
 server {
   server_name sample.example.tld;
+  
+  # allow big file uploads with e.g. nextcloud
+  client_max_body_size 10G;
+  client_body_buffer_size 400M;
+  
   location /.well-known {
     root /usr/local/www/sample.example.tld/;
    }
